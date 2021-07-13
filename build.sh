@@ -9,8 +9,8 @@ if [[ $? -ne 0 ]]; then echo "unable to move to $HOME directory" && exit 255; fi
 ls -la .
 if [[ $? -ne 0 ]]; then echo "unable to list everything in current directory" && exit 255; fi
 
-rm -r ./*
-if [[ $? -ne 0 ]]; then echo "unable to delete everything in $HOME directory" && exit 255; fi
+rm -r ./gitconfig
+if [[ $? -ne 0 ]]; then echo "unable to delete .gitconfig file in $HOME directory" && exit 255; fi
 
 git clone --bare https://github.com/jaebradley/dotfiles.git .dotfiles
 if [[ $? -ne 0 ]]; then echo "could not clone dotfiles repository" && exit 255; fi
