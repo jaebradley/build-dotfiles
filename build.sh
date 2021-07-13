@@ -6,7 +6,7 @@ if [[ $? -ne 0 ]]; then echo "git command does not exist" && exit 255; fi
 cd "$HOME"
 if [[ $? -ne 0 ]]; then echo "unable to move to $HOME directory" && exit 255; fi
 
-git clone https://github.com/jaebradley/dotfiles.git
+git clone https://github.com/jaebradley/dotfiles.git .dotfiles
 if [[ $? -ne 0 ]]; then echo "could not clone dotfiles repository" && exit 255; fi
 
 /usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout
