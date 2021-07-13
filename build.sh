@@ -9,10 +9,7 @@ if [[ $? -ne 0 ]]; then echo "unable to move to $HOME directory" && exit 255; fi
 git clone https://github.com/jaebradley/dotfiles.git
 if [[ $? -ne 0 ]]; then echo "could not clone dotfiles repository" && exit 255; fi
 
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-if [[ $? -ne 0 ]]; then echo "unable to alias config" && exit 255; fi
-
-config checkout
+/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout
 if [[ $? -ne 0 ]]; then echo "unable to checkout config" && exit 255; fi
 
 if [[ -x "./scripts/start.sh" ]]; then echo "start script is not executable" && exit 255; fi
