@@ -3,7 +3,7 @@ name: Build Dotfiles
 on:
   push:
     branches:
-      - add-build
+      - main
   pull_request:
   schedule:
     - cron: '0 22 * * *'
